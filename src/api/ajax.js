@@ -4,12 +4,12 @@
  */
 import axios from 'axios';
 
-export default ajax = (url, data = {}, type = 'GET') => {
+export default function ajax(url, data = {}, type = 'GET') {
     return new Promise(function (resolve, reject) {
         let promise;
         if (type === 'GET') {
             // get 请求拼接参数，并发送请求
-            const str = '';
+            let str = '';
             Object.keys(data).forEach((key) => {
                 str += `${key}=${data[key]}&`;
             });
